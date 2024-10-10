@@ -1,14 +1,27 @@
 {
   "version": 2,
-  "functions": {
-    "api/**/*.js": {
-      "runtime": "nodejs18.x"
+  "builds": [
+    {
+      "src": "server.js", 
+      "use": "@vercel/node"
     }
-  },
+  ],
   "routes": [
     {
-      "src": "/api/(.*)",
-      "dest": "/api/$1.js"
+      "src": "/api/users",
+      "dest": "/api/users.js"
+    },
+    {
+      "src": "/api/products",
+      "dest": "/api/products.js"
+    },
+    {
+      "src": "/api/orders",
+      "dest": "/api/orders.js"
+    },
+    {
+      "src": "/api/editHistory",
+      "dest": "/api/editHistory.js"
     }
   ]
 }
